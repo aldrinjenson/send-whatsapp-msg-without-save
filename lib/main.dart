@@ -27,7 +27,9 @@ class HomeScreen extends StatefulWidget {
 const String countryCode = '+91';
 
 void _launchUrl(url) async {
-  if (!await launchUrl(url)) throw 'Could not launch $url';
+  if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+    throw 'Could not launch $url';
+  }
 }
 
 class _HomeScreenState extends State<HomeScreen> {
