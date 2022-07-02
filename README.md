@@ -4,6 +4,4 @@ Simple flutter app to send whatsapp messages without having to save a new contac
 
 ## Demo
 
-![demo video gif](demo.gif)
-
-## APK
+![demo video gif](https://raw.githubusercontent.com/aldrinjenson/send-whatsapp-msg-without-save/main/demo.gif)
