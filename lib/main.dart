@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_print, unnecessary_brace_in_string_interps
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
 
 bool isNumeric(String s) {
   // ignore: unnecessary_null_comparison
@@ -99,10 +98,18 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 120,
             ),
-            Linkify(
-              onOpen: (link) => print("Clicked ${link.url}!"),
-              text:
-                  "View App Source at: https://github.com/aldrinjenson/send-whatsapp-msg-without-save",
+            InkWell(
+              onTap: () async {
+                await launchUrl(
+                    Uri.parse(
+                        "https://github.com/aldrinjenson/send-whatsapp-msg-without-save"),
+                    mode: LaunchMode.externalApplication);
+              },
+              child: Text(
+                'View Source',
+                style: TextStyle(
+                    color: Colors.blue, decoration: TextDecoration.underline),
+              ),
             )
           ],
         ),
